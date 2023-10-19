@@ -13,15 +13,12 @@ let currentPlayer = oText;
 
 let used_boxes = 0;
 
-//------------------------------number of click------------------------------
+//------------------------------Number of Click------------------------------
 
 const clickBoard = function () {
   boxes.forEach((box, index) => {
 
-
     box.addEventListener("click", boxClick);
-
-
 
   });
 };
@@ -33,7 +30,6 @@ const clickBoard = function () {
 function boxClick(e) {
 
   const id = e.target.id;
-
 
 
   if (!cells[id]) {
@@ -50,7 +46,6 @@ function boxClick(e) {
       return;
     }
 
-
   }
 
 
@@ -65,6 +60,7 @@ function boxClick(e) {
   }
 
 
+  
 if(used_boxes==9){
   console.log("hello")
   playerTxt.innerHTML = `Draw`;
@@ -73,6 +69,7 @@ if(used_boxes==9){
 
 
 }
+
 //------------------------------Stop Game------------------------------
 
 
@@ -82,8 +79,9 @@ function stopGame() {
 
     stopClick();
 
-
 }
+
+
 //------------------------------Stop Click------------------------------
 
 
@@ -95,15 +93,7 @@ const stopClick = function () {
 
   });
 
-
 };
-
-
-
-
-
-
-
 
 
 
@@ -165,11 +155,7 @@ const playerWin = (player) => {
 
 
 
-
 //---------------------------------Click restartbutton---------------------------------
-
-
-
 
 
 function restart() {
@@ -185,7 +171,7 @@ function restart() {
       box.innerText = "";
     });
 
-    playerTxt.innerHTML = `Start!`;
+    playerTxt.innerHTML = `Play the Game!`;
 
     currentPlayer = oText;
 
@@ -193,8 +179,6 @@ function restart() {
   });
 
 }
-
-
 
 
 
