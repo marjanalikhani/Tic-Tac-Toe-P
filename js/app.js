@@ -23,9 +23,7 @@ const clickBoard = function () {
   });
 };
 
-
 //------------------------------- Box Click-------------------------------
-
 
 function boxClick(e) {
 
@@ -45,20 +43,16 @@ function boxClick(e) {
       stopGame();
       return;
     }
-
+    if (currentPlayer === oText) {
+      currentPlayer = xText;
+      playerTxt.innerHTML = `X Turn`;
+  
+    }
+    else {
+      currentPlayer = oText;
+      playerTxt.innerHTML = `O Turn`;
+    }
   }
-
-
-
-  if (currentPlayer === oText) {
-    currentPlayer = xText;
-    playerTxt.innerHTML = `X Turn`;
-  }
-  else {
-    currentPlayer = oText;
-    playerTxt.innerHTML = `O Turn`;
-  }
-
 
   
 if(used_boxes==9){
@@ -66,7 +60,6 @@ if(used_boxes==9){
   playerTxt.innerHTML = `Draw`;
 
 }
-
 
 }
 
@@ -81,7 +74,6 @@ function stopGame() {
 
 }
 
-
 //------------------------------Stop Click------------------------------
 
 
@@ -94,8 +86,6 @@ const stopClick = function () {
   });
 
 };
-
-
 
 //------------------------------Playerr win------------------------------
 
@@ -133,7 +123,6 @@ const playerWin = (player) => {
 
   }
 
-
   //-----------------------------------------------------------------------------------
 
   if (cells[4] === player) {
@@ -147,16 +136,16 @@ const playerWin = (player) => {
       return true;
     }
 
+    if (cells[2] === player && cells[6] === player) {
+      return true;
+    }
+
+
   }
-
-
 
 };
 
-
-
 //---------------------------------Click restartbutton---------------------------------
-
 
 function restart() {
   btn.addEventListener("click", () => {
@@ -179,8 +168,6 @@ function restart() {
   });
 
 }
-
-
 
 clickBoard();
 
